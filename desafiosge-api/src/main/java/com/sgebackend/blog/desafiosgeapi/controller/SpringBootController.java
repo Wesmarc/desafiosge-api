@@ -18,7 +18,12 @@ import java.util.List;
 
 //Criada nova classe SpringBootController
 //Injeção DesafiosgeService referenciando a interface e não as implementações
-//Criação do método get Posts modelAndView retornando tanto o post quanto a View posts.html
+//Criação do método get Posts modelAndView retornando tanto o post quanto a View - posts.html
+//Criação do Método getPostDetails que obtem o post pelo ID - postDetails
+//Criação do Método getPostForm onde serão guardados os novos posts - postForm
+//Criação do método savePost, utilizando o @Vailad para validar se os atributos com validções estão todos devidamente preenchidos
+//Foi inserido um if para o caso da validações retornarem erro, o usuário ser redirecionado para a tela de novo post
+//Utilizado o método addFlashAttribute onde passo string com um alerta ao usuário - mensagemdeValidacao.html
 @Controller
 public class SpringBootController {
 

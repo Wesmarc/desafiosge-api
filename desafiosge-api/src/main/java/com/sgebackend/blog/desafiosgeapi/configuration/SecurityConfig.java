@@ -3,11 +3,15 @@ package com.sgebackend.blog.desafiosgeapi.configuration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
+//Classe recebe anotação informando ao Spring que trata-se de classe de configuração
+//Criada uma variável do tipo String estática repasando as URI que não necessitam de autenticação
+//Implementado método configure informado de forma resumida as URI que não precisam ou não de autencicação
+//Implementado um segundo método configure com a definição de usuário e senha definido como admim
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -33,9 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("weslei").password("{noop}1234").roles("ADMIN");
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception{
-        web.ignoring().antMatchers("/bootstrap/**");
-//        web.ignoring().antMatchers("/bootstrap/**", "/style/**");
-    }
+
+
 }
