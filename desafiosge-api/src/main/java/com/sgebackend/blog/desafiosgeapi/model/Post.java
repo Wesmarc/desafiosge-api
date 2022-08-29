@@ -8,9 +8,8 @@ import java.time.LocalDate;
 
 //Classe será uma tabela no banco de dados e recebeu anotação entity por este motivo
 //Quando o comando spring.jpa.hibernate.ddl-auto=update executar automaticamente, a tabela receberá o nome de "TB_POST"
-//Criado também os atributos e os métodos getters e setters de cada um
-//Os atributos que não podem ficar em branco foram anotados com @NotBlank, no caso do texto para poder receber uma loga lista
-//de caracteres recebeu também a anotação @lob
+//Criado também os atributos e os métodos getters e setters subsequentes
+//Os atributos que não podem ficar em branco foram anotados com @NotBlank, no caso do texto para poder receber uma loga lista de caracteres recebeu também a anotação @lob
 //No atributo data foi inseria a anotação @JsonFormat para indicar o formato de data desejado
 @Entity
 @Table(name="TB_POST")
