@@ -16,11 +16,19 @@ import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
+//Criada nova classe SpringBootController
+//Injeção DesafiosgeService referenciando a interface e não as implementações
+//Criação do método get Posts modelAndView retornando tanto o post quanto a View posts.html
 @Controller
 public class SpringBootController {
 
     @Autowired
     DesafiosgeService desafiosgeService;
+
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
 
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public ModelAndView getPosts() {
@@ -45,6 +53,7 @@ public class SpringBootController {
     public String getPostForm() {
         return "postForm";
     }
+
     @RequestMapping(value = "/newpost", method = RequestMethod.POST)
     public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes) {
         attributes.addFlashAttribute("messagem", "Verifique se os campos obrigatórios foram preenchidos!");
